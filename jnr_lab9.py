@@ -6,6 +6,12 @@ def encode(password):
         new_password += str(int(char)+3)
     return new_password
 
+def decode(password):
+    new_password = ""
+    for i in range(0, len(password)):
+        new_password += str((int(password[i]) - 3))
+    return new_password
+
 def main():
     while True:
         print("""
@@ -25,3 +31,6 @@ def main():
             print(f"The encoded password is {encoded_p}, and the original password is {decode(encoded_p)}.")
         elif choice == 3:
             break
+
+if __name__ == '__main__':
+    main()
